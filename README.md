@@ -1,6 +1,30 @@
-# 2544X Bolted - VEX Robotics Game 4 (G4) Team Repository
+# 2544X Bolted - VEX Robotics Game 4 (Spin Up) Team Repository
 
 Welcome to the **2544X Bolted** VEX Robotics team repository for **Game 4 (Spin Up)**! This is the official codebase for Team 2544X's VEX competition code and experimental systems, built on the **EZ-Template** framework.
+
+## ⚠️ IMPORTANT: VEX Rule G4 - Intellectual Property & Code Sharing
+
+**Rule G4** (VEX Robotics Game Manual) explicitly prohibits **copying, cloning, or using code from other teams without explicit written permission**. This repository is provided for:
+
+- **Team 2544X members only** for reference and development
+- **Educational purposes** within our organization
+- **Published work credit** - any code derived from this repository must credit Team 2544X Bolted
+
+### What You **CANNOT** Do (Rule G4 Violation):
+- ❌ Copy code from this repository and submit it as your own work
+- ❌ Use this codebase to create competition entries for other teams
+- ❌ Distribute this code without explicit attribution and permission
+- ❌ Clone entire files/routines for direct use in other team robots
+
+### What You **CAN** Do (Educational Use):
+- ✅ Study code patterns and robotics techniques
+- ✅ Reference algorithms for learning purposes (with credit)
+- ✅ Implement similar concepts using your own code (not copy-paste)
+- ✅ Request explicit written permission from Team 2544X for collaboration
+
+**Violations of Rule G4 result in disqualification from competition.**
+
+---
 
 ## Table of Contents
 
@@ -654,7 +678,9 @@ if __name__ == "__main__":
 
 ## License
 
-This code is the intellectual property of Team 2544X Bolted. Use for competition purposes under VEX Robotics competition rules.
+This code is the intellectual property of Team 2544X Bolted. 
+
+**VEX Rule G4 Compliance**: This repository is provided for team members and educational purposes only. Copying, cloning, or using this code without explicit written permission from Team 2544X violates VEX Rule G4 and will result in disqualification from competition.
 
 ---
 
