@@ -1,6 +1,6 @@
-# 2544X Bolted - VEX Robotics Game 4 (Spin Up) Team Repository
+# 2544X Bolted - VEX Robotics    ( ) Team Repository
 
-Welcome to the **2544X Bolted** VEX Robotics team repository for **Game 4 (Spin Up)**! This is the official codebase for Team 2544X's VEX competition code and experimental systems, built on the **EZ-Template** framework.
+Welcome to the **2544X Bolted** VEX Robotics team repository for **   ( )**! This is the official codebase for Team 2544X's VEX competition code and experimental systems, built on the **EZ-Template** framework.
 
 ## ⚠️ IMPORTANT: VEX Rule G4 - Intellectual Property & Code Sharing
 
@@ -51,7 +51,7 @@ For current competition code, use:
 
 ## Repository Overview
 
-This repository contains the complete software suite for the 2544X Bolted VEX Robotics team competing in **Game 4 (Spin Up)**, including:
+This repository contains the complete software suite for the 2544X Bolted VEX Robotics team competing in **   ( )**, including:
 
 - **Competition Code**: Production-ready autonomous and driver control routines
 - **Test & Validation Scripts**: Subsystem verification and calibration code
@@ -62,7 +62,7 @@ This repository contains the complete software suite for the 2544X Bolted VEX Ro
 ### Key Technical Stack
 
 - **Language**: Python (VEXcode Python 3.x)
-- **Platform**: VEX Robotics Game 4 (Spin Up) / V5 Hardware
+- **Platform**: VEX Robotics    ( ) / V5 Hardware
 - **Framework**: **EZ-Template** (OU Robotics base framework)
 - **API**: VEX V5 Python SDK with EZ wrapper classes
 - **Version Control**: Git (with VEXcode .v5python project files)
@@ -95,7 +95,7 @@ All files follow this standardized naming convention:
 
 | Component | Values | Purpose |
 |-----------|--------|---------|
-| **STRATEGY** | `Push_back`, `Override` | `Push_back`: Primary strategy variant for Spin Up<br>`Override`: Special purpose (replays, override behavior) |
+| **STRATEGY** | `Push_back`, `Override` | `Push_back`: Primary strategy variant for  <br>`Override`: Special purpose (replays, override behavior) |
 | **PURPOSE** | Descriptive name | Clearly indicates function (e.g., `Competition_Code`, `IMU_Test_Code`) |
 | **Extension** | `.v5python` | VEXcode Python project file format (JSON-based) |
 
@@ -103,7 +103,7 @@ All files follow this standardized naming convention:
 
 ```
 2544X-vex-team-bolted/
-├── Competition Code (Spin Up Strategy: Push_back)
+├── Competition Code (  Strategy: Push_back)
 │   ├── 2544X_Bolted_(Push_back)----Stable_Competition_Build.v5python     [PRODUCTION]
 │   ├── 2544X_Bolted_(Push_back)----Competition_Code_V4.v5python          [ACTIVE]
 │   ├── 2544X_Bolted_(Push_back)----Competition_Code_V3.v5python          [PREVIOUS]
@@ -151,9 +151,9 @@ All files follow this standardized naming convention:
 
 ## Technical Documentation
 
-### VEX Game 4 (Spin Up) Platform
+### VEX    ( ) Platform
 
-This repository targets **VEX Robotics Game 4: Spin Up**, featuring:
+This repository targets **VEX Robotics   :  **, featuring:
 
 - **V5 Hardware**: Cortex-based processing with Python runtime
 - **Drive Systems**: Tank-drive chassis with smart motors
@@ -229,7 +229,7 @@ chassis.get_heading()  # Returns gyro heading (0-359)
 - **Sensors**: Motor encoders + IMU gyroscope for accuracy
 - **Strategy Focus**: "Push_back" - defensive positioning and controlled movements
 
-#### Autonomous System (Spin Up Game)
+#### Autonomous System (  Game)
 - **Selection**: Vision or controller-based routine selection
 - **Movements**: Pre-programmed drive/turn sequences
 - **Disc Interaction**: Intake and shooter subsystem timing
@@ -368,7 +368,7 @@ cat performance_analysis.txt
 
 **Files**: `Competition_Code_V*.v5python`, `Stable_Competition_Build.v5python`
 
-These are the primary competition routines deployed to the robot during Spin Up matches.
+These are the primary competition routines deployed to the robot during   matches.
 
 **Key Features**:
 - Optimized autonomous routines using EZ-Template PID (tuned drive/turn gains)
@@ -657,7 +657,7 @@ if __name__ == "__main__":
 **Q: Vision sensor not detecting discs**
 - Run `Vision_Sensor_Test.v5python` with debug output enabled
 - Verify adequate lighting (competition-legal, target 300-500 lux)
-- Calibrate color signatures for Spin Up disc colors
+- Calibrate color signatures for   disc colors
 - Test under competition lighting conditions
 
 **Q: PID gains causing oscillation or sluggish response**
@@ -699,9 +699,9 @@ This code is the intellectual property of Team 2544X Bolted.
 
 ---
 
-## About Game 4 (Spin Up)
+## About    ( )
 
-**2544X Bolted** competes in **VEX Robotics Game 4: Spin Up**, featuring:
+**2544X Bolted** competes in **VEX Robotics   :  **, featuring:
 
 - **Objective**: Score discs into team-colored goal zones
 - **Strategy**: Push_back-oriented defensive positioning and controlled placement
@@ -714,6 +714,6 @@ This code is the intellectual property of Team 2544X Bolted.
 
 **Last Updated**: 2026-05-14  
 **Team**: 2544X Bolted  
-**Competition**: VEX Robotics Game 4 (Spin Up) / V5  
+**Competition**: VEX Robotics    ( ) / V5  
 **Framework**: EZ-Template-based  
 **Repository**: [github.com/MithulEsakiraja/2544X-vex-team-bolted](https://github.com/MithulEsakiraja/2544X-vex-team-bolted)
