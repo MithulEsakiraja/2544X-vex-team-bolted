@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>World Clock</h1>
+        <p class="subtitle">Current Time in Multiple Time Zones</p>
+        
+        <div class="clocks-grid">
+            <div class="clock-card">
+                <h2>New York (EST)</h2>
+                <div class="time" id="ny-time">--:--:--</div>
+                <div class="timezone">UTC-5</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>London (GMT)</h2>
+                <div class="time" id="london-time">--:--:--</div>
+                <div class="timezone">UTC+0</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>Tokyo (JST)</h2>
+                <div class="time" id="tokyo-time">--:--:--</div>
+                <div class="timezone">UTC+9</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>Sydney (AEST)</h2>
+                <div class="time" id="sydney-time">--:--:--</div>
+                <div class="timezone">UTC+10</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>Dubai (GST)</h2>
+                <div class="time" id="dubai-time">--:--:--</div>
+                <div class="timezone">UTC+4</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>Los Angeles (PST)</h2>
+                <div class="time" id="la-time">--:--:--</div>
+                <div class="timezone">UTC-8</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>Singapore (SGT)</h2>
+                <div class="time" id="singapore-time">--:--:--</div>
+                <div class="timezone">UTC+8</div>
+            </div>
+            
+            <div class="clock-card">
+                <h2>Paris (CET)</h2>
+                <div class="time" id="paris-time">--:--:--</div>
+                <div class="timezone">UTC+1</div>
+            </div>
+        </div>
+        
+        <div class="local-time">
+            <h3>Your Local Time</h3>
+            <div class="time" id="local-time">--:--:--</div>
+            <div class="local-timezone" id="local-timezone"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
