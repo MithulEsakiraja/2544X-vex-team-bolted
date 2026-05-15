@@ -1,0 +1,11 @@
+*.bin binary
+*.zip binary
+*.a binary
+*.elf binary
+*.o binary
+*.obj binary
+*.v5python linguist-language=JSON
+firmware/** linguist-vendored
+include/pros/** linguist-vendored
+include/okapi/** linguist-vendored
+include/liblvgl/** linguist-vendored
