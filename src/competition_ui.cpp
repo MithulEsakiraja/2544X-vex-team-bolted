@@ -175,7 +175,14 @@ void draw_ui() {
   pros::c::screen_print_at(TEXT_SMALL, 128, 164, "TIME %.1fs   FR %d",
                            duration_for_auton(selected_auton) / 1000.0, frame_count_for_auton(selected_auton));
   pros::c::screen_print_at(TEXT_SMALL, 326, 164, "DRV %s", driver_assist_drive_health_label());
-  pros::c::screen_print_at(TEXT_SMALL, 128, 182, "L1+UP start   L1+DOWN save   R2 slot");
+  const DriverMode mode = driver_assist_mode_get();
+  if (mode == DriverMode::Record) {
+    pros::c::screen_print_at(TEXT_SMALL, 128, 182, "REC: L1+UP start   L1+DOWN save   R2 slot");
+  } else if (mode == DriverMode::PitCheck) {
+    pros::c::screen_print_at(TEXT_SMALL, 128, 182, "PIT: L2 runs drive check");
+  } else {
+    pros::c::screen_print_at(TEXT_SMALL, 128, 182, "MATCH: driver controls only");
+  }
 
   pros::screen::set_pen(kBlack);
   pros::screen::fill_rect(0, 192, 479, 199);
