@@ -155,45 +155,13 @@ void ez_screen_task() {
 pros::Task ezScreenTask(ez_screen_task);
 
 /**
- * Gives you some extras to run in your opcontrol:
- * - run your autonomous routine in opcontrol by pressing DOWN and B
- *   - to prevent this from accidentally happening at a competition, this
- *     is only enabled when you're not connected to competition control.
- * - gives you a GUI to change your PID values live by pressing X
+ * Keeps EZ-Template test tools locked out of driver control.
+ * Match mode should only drive the robot; autonomous only runs from the
+ * competition autonomous callback.
  */
 void ez_template_extras() {
-  // Only run this when not connected to a competition switch
-  if (!pros::competition::is_connected()) {
-    const bool match_mode = driver_assist_mode_get() == DriverMode::Match;
-    // PID Tuner
-    // - after you find values that you're happy with, you'll have to set them in auton.cpp
-
-    // Enable / Disable PID Tuner
-    //  When enabled:
-    //  * use A and Y to increment / decrement the constants
-    //  * use the arrow keys to navigate the constants
-    if (match_mode && master.get_digital_new_press(DIGITAL_X))
-      chassis.pid_tuner_toggle();
-    else if (!match_mode && chassis.pid_tuner_enabled())
-      chassis.pid_tuner_disable();
-
-    // Trigger the selected autonomous routine
-    if (match_mode && master.get_digital(DIGITAL_B) && master.get_digital(DIGITAL_DOWN)) {
-      pros::motor_brake_mode_e_t preference = chassis.drive_brake_get();
-      autonomous();
-      chassis.drive_brake_set(preference);
-    }
-
-    // Allow PID Tuner to iterate
-    if (match_mode)
-      chassis.pid_tuner_iterate();
-  }
-
-  // Disable PID Tuner when connected to a comp switch
-  else {
-    if (chassis.pid_tuner_enabled())
-      chassis.pid_tuner_disable();
-  }
+  if (chassis.pid_tuner_enabled())
+    chassis.pid_tuner_disable();
 }
 
 /**
@@ -215,7 +183,7 @@ void opcontrol() {
   driver_assist_match_timer_reset();
 
   while (true) {
-    // Gives you some extras to make EZ-Template ezier
+    // Keep any EZ test tools disabled during driver control.
     ez_template_extras();
     driver_assist_tank_iterate();
     if (driver_assist_mode_get() == DriverMode::Record) {
