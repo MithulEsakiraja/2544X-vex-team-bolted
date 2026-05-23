@@ -19,6 +19,7 @@ Important files:
 `docs/` explains the project from different angles:
 
 - `JUDGES_GUIDE.md`: short judge-facing explanation.
+- `CONTROLS.md`: driver controller, Brain HUD, Record mode, Pit mode, and match lockouts.
 - `ARCHITECTURE.md`: how systems fit together.
 - `AUTON_REPLAY_CONCEPTS.md`: high-level replay concept.
 - `REPLAY_BUILD_GUIDE.md`: explanation of the included replay implementation and the tuning ideas behind it.

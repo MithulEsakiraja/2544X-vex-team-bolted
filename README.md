@@ -16,7 +16,7 @@ This repository has three goals:
 | `include/` | Current public PROS headers and bundled library headers |
 | `firmware/` | PROS/EZ-Template libraries needed for local builds |
 | `bin/` | Uploadable V5 package binaries |
-| `docs/` | Architecture, judges guide, and adaptation documentation |
+| `docs/` | Controls, architecture, judges guide, and adaptation documentation |
 | `replayability/` | Replay/auton recorder design notes and teaching snippets |
 | `legacy/push_back/` | Older Push Back `.v5python` files kept for public reference |
 | `legacy/replay_archive/` | Old replay archive kept as historical material |
@@ -53,6 +53,21 @@ The current robot code is included in this repository.
 | `include/subsystems.hpp` | Hardware profile: ports, 600 RPM drive, wheel size, 36:60 gearing |
 
 The docs explain the design around the code instead of replacing the code.
+
+## Controls
+
+The full control map is in `docs/CONTROLS.md`.
+
+Quick version:
+
+- Tank drive: left stick Y and right stick Y
+- `R1`: cycle driver profile
+- `L2`: creep drive in Match/Record, pit motor check in Pit
+- `L1 + UP`: start recording in Record mode
+- `L1 + DOWN`: stop and save recording in Record mode
+- `R2`: switch between `QUAL` and `SKILLS` recording slots
+- `DOWN + B`: run selected auton in Pit mode only
+- Brain HUD: select `QUAL`, `SKILLS`, `Q MIR`, or `S MIR`
 
 ## Build
 
@@ -105,14 +120,15 @@ See `legacy/README.md` for details.
 
 1. `docs/JUDGES_GUIDE.md`
 2. `docs/REPOSITORY_MAP.md`
-3. `docs/ARCHITECTURE.md`
-4. `replayability/README.md`
-5. `docs/REPLAY_BUILD_GUIDE.md`
-6. `docs/ADAPTATION_CHECKLIST.md`
-7. `src/main.cpp`
-8. `src/driver_assist.cpp`
-9. `src/competition_ui.cpp`
-10. `src/path_recorder.cpp`
+3. `docs/CONTROLS.md`
+4. `docs/ARCHITECTURE.md`
+5. `replayability/README.md`
+6. `docs/REPLAY_BUILD_GUIDE.md`
+7. `docs/ADAPTATION_CHECKLIST.md`
+8. `src/main.cpp`
+9. `src/driver_assist.cpp`
+10. `src/competition_ui.cpp`
+11. `src/path_recorder.cpp`
 
 ## Reuse Policy
 
