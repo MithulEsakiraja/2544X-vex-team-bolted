@@ -62,4 +62,4 @@ A different robot must retune at least:
 - distance correction
 - driver path timing
 
-The concept is reusable, but a saved replay behavior is a robot fingerprint. The public source is meant to teach the structure without giving away a copy-ready implementation.
+The concept is reusable, but a saved replay behavior is a robot fingerprint. The source gives the 2544X implementation and the docs explain the structure so it can be studied, tested, and adapted honestly.

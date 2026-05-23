@@ -21,7 +21,7 @@ Important files:
 - `JUDGES_GUIDE.md`: short judge-facing explanation.
 - `ARCHITECTURE.md`: how systems fit together.
 - `AUTON_REPLAY_CONCEPTS.md`: high-level replay concept.
-- `REPLAY_BUILD_GUIDE.md`: partial snippets and implementation ideas.
+- `REPLAY_BUILD_GUIDE.md`: explanation of the included replay implementation and the tuning ideas behind it.
 - `ADAPTATION_CHECKLIST.md`: what another robot must retune.
 
 ## Replayability

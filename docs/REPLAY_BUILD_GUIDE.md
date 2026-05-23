@@ -1,6 +1,6 @@
 # Replay Build Guide
 
-This document explains the recorded-auton replay concept used by 2544X Bolted. It intentionally does not provide a complete copy-paste implementation. A good replay system has to be tuned on the robot that will run it.
+This document explains the recorded-auton replay concept used by 2544X Bolted. The working 2544X implementation is in `src/path_recorder.cpp`; this guide explains how that kind of system is built and why it has to be tuned on the robot that will run it.
 
 ## Goal
 
@@ -116,8 +116,8 @@ The idea is simple: if a side was not intentionally moving, force that side to z
 - Anti-tip speed limits
 - Driver path timing
 
-## Why The Public Source Uses A Stub
+## Where The Full Code Lives
 
-The public `src/path_recorder.cpp` keeps this project buildable and shows where the replay system plugs into the robot code. It is still not a universal template: a replay system copied without tuning is unreliable and does not show real engineering understanding.
+The full 2544X replay implementation is in `src/path_recorder.cpp`. It is still not a universal template: a replay system copied without tuning is unreliable and does not show real engineering understanding.
 
-Use this guide to build your own version, test it, and explain the choices you made.
+Use this guide to understand the included code, test it, and explain the choices that make it work on this robot.

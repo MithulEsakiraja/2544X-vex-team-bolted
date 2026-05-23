@@ -17,7 +17,7 @@ This repository has three goals:
 | `firmware/` | PROS/EZ-Template libraries needed for local builds |
 | `bin/` | Uploadable V5 package binaries |
 | `docs/` | Architecture, judges guide, and adaptation documentation |
-| `replayability/` | Replay/auton recorder design notes and partial snippets |
+| `replayability/` | Replay/auton recorder design notes and teaching snippets |
 | `legacy/push_back/` | Older Push Back `.v5python` files kept for public reference |
 | `legacy/replay_archive/` | Old replay archive kept as historical material |
 | `legacy/web/` | Old web/documentation file |
@@ -40,9 +40,31 @@ Robot profile:
 
 The replay module is intentionally robot-specific. It is useful as a working reference, but it should not be copy-pasted onto another drivetrain without changing ports, gearing, wheel size, tuning, driver workflow, and field testing.
 
+## Where The Code Is
+
+The current robot code is included in this repository.
+
+| File | What to read it for |
+| --- | --- |
+| `src/main.cpp` | PROS lifecycle, 4 motor tank drive setup, competition callbacks, opcontrol loop |
+| `src/path_recorder.cpp` | Record mode, SD/RAM replay storage, metadata files, replay timing, correction, mirrored auton |
+| `src/competition_ui.cpp` | Brain HUD, auton selector, QUAL/SKILLS/Q MIR/S MIR selection |
+| `src/driver_assist.cpp` | Driver profiles, anti-tip limiting, Pit mode, motor checks, match timer |
+| `include/subsystems.hpp` | Hardware profile: ports, 600 RPM drive, wheel size, 36:60 gearing |
+
+The docs explain the design around the code instead of replacing the code.
+
 ## Build
 
-Install PROS, then run:
+Install PROS, clone the repo, then build from the project folder:
+
+```powershell
+git clone https://github.com/MithulEsakiraja/2544X-vex-team-bolted.git
+cd 2544X-vex-team-bolted
+pros make
+```
+
+If the project is already downloaded, just run:
 
 ```powershell
 pros make
@@ -60,6 +82,8 @@ Connect the V5 Brain over USB or controller tether:
 ```powershell
 pros upload
 ```
+
+If uploading from VS Code, open the repo folder and use the PROS upload button. The project also keeps the latest build artifact at `bin/hot.package.bin`.
 
 ## Replayability Section
 
@@ -88,6 +112,7 @@ See `legacy/README.md` for details.
 7. `src/main.cpp`
 8. `src/driver_assist.cpp`
 9. `src/competition_ui.cpp`
+10. `src/path_recorder.cpp`
 
 ## Reuse Policy
 
