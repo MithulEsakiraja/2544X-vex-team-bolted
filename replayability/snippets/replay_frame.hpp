@@ -1,7 +1,7 @@
 #pragma once
 
 // Minimal shape of a timed tank-drive replay frame.
-// This is a teaching snippet, not the full 2544X private implementation.
+// This is a teaching snippet, not a standalone robot project.
 
 struct ReplayFrame {
   int time_ms = 0;
@@ -11,4 +11,3 @@ struct ReplayFrame {
   double left_position_deg = 0.0;
   double right_position_deg = 0.0;
 };
-

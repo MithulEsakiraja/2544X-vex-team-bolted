@@ -1,8 +1,8 @@
 # Auton Replay Concepts
 
-The private 2544X system records what the driver did, then plays it back with small corrections so the robot can repeat the route more consistently.
+The 2544X system records what the driver did, then plays it back with small corrections so the robot can repeat the route more consistently.
 
-The public GitHub project keeps a buildable replay stub in `src/path_recorder.cpp`. The complete working recorder is not included. This document explains the concept, and `docs/REPLAY_BUILD_GUIDE.md` shows partial snippets and design steps.
+The GitHub project includes the branded 2544X implementation in `src/path_recorder.cpp`. This document explains the concept, and `docs/REPLAY_BUILD_GUIDE.md` breaks down the design so readers understand the system instead of blindly copying it.
 
 ## Recording Idea
 
@@ -15,7 +15,7 @@ In the full robot system, record mode saves timed tank-drive frames. Each frame 
 - left drive motor position average
 - right drive motor position average
 
-The private robot code used a dense recording interval and throttled status text so screen/controller updates did not slow the loop.
+The robot code uses a dense recording interval and throttled status text so screen/controller updates do not slow the loop.
 
 ## Storage Idea
 
@@ -63,4 +63,3 @@ A different robot must retune at least:
 - driver path timing
 
 The concept is reusable, but a saved replay behavior is a robot fingerprint. The public source is meant to teach the structure without giving away a copy-ready implementation.
-

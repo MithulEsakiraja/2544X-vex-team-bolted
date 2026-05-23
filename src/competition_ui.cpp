@@ -179,7 +179,7 @@ void draw_ui() {
   if (mode == DriverMode::Record) {
     pros::c::screen_print_at(TEXT_SMALL, 128, 182, "REC: L1+UP start   L1+DOWN save   R2 slot");
   } else if (mode == DriverMode::PitCheck) {
-    pros::c::screen_print_at(TEXT_SMALL, 128, 182, "PIT: L2 runs drive check");
+    pros::c::screen_print_at(TEXT_SMALL, 128, 182, "PIT: L2 check   DOWN+B auton");
   } else {
     pros::c::screen_print_at(TEXT_SMALL, 128, 182, "MATCH: driver controls only");
   }

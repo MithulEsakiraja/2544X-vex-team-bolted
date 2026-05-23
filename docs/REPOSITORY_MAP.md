@@ -11,7 +11,7 @@ Important files:
 - `src/main.cpp`: PROS lifecycle, chassis setup, competition hooks, opcontrol loop.
 - `src/driver_assist.cpp`: drive modes, anti-tip, match timer, pit check, driver profiles.
 - `src/competition_ui.cpp`: Brain HUD and auton selector.
-- `src/path_recorder.cpp`: public guide-only replay module.
+- `src/path_recorder.cpp`: 2544X timed tank-drive record/replay module.
 - `include/subsystems.hpp`: visible hardware constants.
 
 ## Documentation
@@ -26,7 +26,7 @@ Important files:
 
 ## Replayability
 
-`replayability/` is the dedicated section for the auton recording idea. It exists so the concept can be studied without turning the private code into a template.
+`replayability/` is the dedicated section for the auton recording idea. It exists so the concept can be studied before anyone tries to adapt the robot-specific code.
 
 ## Legacy
 
@@ -37,4 +37,3 @@ Important files:
 - `legacy/web/`: old static page.
 
 Legacy files are preserved for history. They are not the current build target.
-

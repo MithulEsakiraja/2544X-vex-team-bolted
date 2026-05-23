@@ -16,8 +16,8 @@ constexpr double kTipHardAngle = 15.0;
 constexpr int kTipSlowSpeed = 78;
 constexpr int kTipHardSpeed = 48;
 constexpr int kCreepSpeed = 52;
-constexpr double kRightDriveScale = 1.08;
-constexpr int kRightMinMovingPower = 10;
+constexpr double kRightDriveScale = 1.0;
+constexpr int kRightMinMovingPower = 0;
 constexpr double kWarmTempC = 55.0;
 constexpr double kHotTempC = 65.0;
 constexpr int kDriverPeriodMs = 105000;
@@ -315,6 +315,9 @@ void test_motor(pros::Motor& motor, const char* name) {
   master.print(1, 0, "%s", "Testing motor");
   motor.move(45);
   pros::delay(450);
+  master.print(1, 0, "RPM %.0f  %.0fC", motor.get_actual_velocity(), motor.get_temperature());
+  master.print(2, 0, "I %.0fmA", motor.get_current_draw());
+  pros::delay(600);
   motor.move(-35);
   pros::delay(250);
   motor.move(0);
@@ -352,6 +355,33 @@ void pit_check_run() {
   master.print(2, 0, "IMU %.0f/%.0f", chassis.imu.get_pitch(), chassis.imu.get_roll());
 }
 
+void pit_auton_run() {
+  if (pros::competition::is_connected()) {
+    master.print(0, 0, "%s", "Pit auton locked");
+    master.print(1, 0, "%s", "Field connected");
+    return;
+  }
+
+  stop_drive();
+  master.clear();
+  master.print(0, 0, "Pit auton: %s", competition_ui_selected_auton_name());
+  master.print(1, 0, "%s", "Hands clear");
+  pros::delay(250);
+
+  chassis.pid_targets_reset();
+  chassis.drive_imu_reset();
+  chassis.drive_sensor_reset();
+  chassis.odom_xyt_set(0_in, 0_in, 0_deg);
+  chassis.drive_brake_set(MOTOR_BRAKE_HOLD);
+
+  competition_ui_selected_auton_call();
+
+  stop_drive();
+  chassis.drive_brake_set(MOTOR_BRAKE_COAST);
+  master.print(0, 0, "%s", "Pit auton done");
+  master.print(1, 0, "%s", "Back to PIT mode");
+}
+
 void pit_check_iterate() {
   if (driver_mode != DriverMode::PitCheck) {
     return;
@@ -359,6 +389,10 @@ void pit_check_iterate() {
 
   if (master.get_digital_new_press(DIGITAL_L2)) {
     pit_check_run();
+  }
+
+  if (master.get_digital(DIGITAL_DOWN) && master.get_digital_new_press(DIGITAL_B)) {
+    pit_auton_run();
   }
 }
 

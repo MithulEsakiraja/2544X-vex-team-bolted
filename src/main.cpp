@@ -19,6 +19,15 @@ ez::Drive chassis(
     kDriveMotorRpm,        // Motor cartridge RPM
     kDriveExternalRatio);  // 36 tooth driving gear to 60 tooth driven gear gives 360 RPM wheel output
 
+void configure_drive_motors_600rpm() {
+  for (pros::Motor& motor : chassis.left_motors) {
+    motor.set_gearing(MOTOR_GEAR_600);
+  }
+  for (pros::Motor& motor : chassis.right_motors) {
+    motor.set_gearing(MOTOR_GEAR_600);
+  }
+}
+
 // Uncomment the trackers you're using here!
 // - `8` and `9` are smart ports (making these negative will reverse the sensor)
 //  - you should get positive values on the encoders going FORWARD and RIGHT
@@ -50,9 +59,10 @@ void initialize() {
   // chassis.odom_tracker_left_set(&vert_tracker);
 
   // Configure your chassis controls
+  configure_drive_motors_600rpm();
   chassis.opcontrol_curve_buttons_toggle(true);   // Enables modifying the controller curve with buttons on the joysticks
   chassis.opcontrol_drive_activebrake_set(0.0);   // Sets the active brake kP. We recommend ~2.  0 will disable.
-  chassis.opcontrol_curve_default_set(0.0, 0.0);  // Defaults for curve. If using tank, only the first parameter is used. (Comment this line out if you have an SD card!)
+  // Curve defaults are left alone because this robot uses the SD card for replay files.
 
   // Set the drive to your own constants from autons.cpp!
   default_constants();

@@ -37,7 +37,7 @@ Important recorder jobs:
 
 Replay follows recorded timestamps. At each frame, the robot sends the saved tank commands back to the drive.
 
-The private version also used correction logic:
+The 2544X version also uses correction logic:
 
 - heading correction
 - encoder distance correction
@@ -56,4 +56,3 @@ A replay system becomes useful when it refuses to pretend bad data is good data.
 - frame times are broken
 - old replay formats are detected
 - sensor data is missing
-

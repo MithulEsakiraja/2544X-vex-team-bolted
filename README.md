@@ -6,7 +6,7 @@ This repository has three goals:
 
 1. Keep a buildable 2544X PROS/EZ-Template project available for review and upload.
 2. Preserve the older Push Back VEXcode files as open legacy reference material.
-3. Explain the replayability/auton recording system as an engineering concept without publishing a one-file copy-paste solution.
+3. Explain the replayability/auton recording system as an engineering concept while keeping the project tied to 2544X's robot, branding, and workflow.
 
 ## Repository Layout
 
@@ -36,9 +36,9 @@ Robot profile:
 - Drive cartridge: `600 RPM`
 - External gearing: `36` tooth driving gear to `60` tooth driven gear
 - Driver modes: `MATCH`, `REC`, `PIT`
-- Public replay module: buildable guide-only stub
+- Replay module: timed tank-drive recorder with QUAL/SKILLS saves, SD metadata indexing, RAM fallback, and mirrored playback
 
-The public replay module keeps the project uploadable while directing readers to the replayability documentation. The full robot-specific recorder is not included because it depends on private tuning, field testing, and driver workflow.
+The replay module is intentionally robot-specific. It is useful as a working reference, but it should not be copy-pasted onto another drivetrain without changing ports, gearing, wheel size, tuning, driver workflow, and field testing.
 
 ## Build
 
@@ -69,7 +69,7 @@ Start here:
 - `replayability/RECORDER_DESIGN.md`
 - `docs/REPLAY_BUILD_GUIDE.md`
 
-These files explain the data model, timing loop, safety checks, SD/RAM storage idea, stopped-side lockout, and correction concepts. They include small snippets, but not the complete private implementation.
+These files explain the data model, timing loop, safety checks, SD/RAM storage, stopped-side lockout, metadata indexing, and correction concepts behind the implementation.
 
 ## Legacy Push Back Files
 
@@ -94,4 +94,3 @@ See `legacy/README.md` for details.
 Learn from the concepts. Credit 2544X Bolted. Do not change the branding and present this as a different team's original system.
 
 See `NOTICE.md`.
-

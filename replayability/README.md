@@ -2,7 +2,7 @@
 
 This folder explains the recorded-auton replay concept used by 2544X Bolted.
 
-The public repository does not include the private full replay implementation. Instead, it documents how the system works and gives short snippets that show the core ideas.
+The repository includes the branded 2544X replay implementation and documents how the system works. The goal is learning from the engineering decisions, not cloning the branding and hoping it works on a different robot.
 
 ## Why This Is Separate
 
@@ -17,7 +17,7 @@ Replay code is not portable by copy-paste. It depends on:
 - driver path timing
 - field surface
 
-Publishing the exact private implementation would make the repo easier to clone but worse for learning.
+Publishing robot code without context makes it easy to misuse. This section gives the context: why the recorder stores each field, how the timing loop works, and where tuning lives.
 
 ## Files
 
@@ -28,5 +28,4 @@ Publishing the exact private implementation would make the repo easier to clone 
 
 ## Where It Connects To Code
 
-The public project keeps `src/path_recorder.cpp` as a guide-only stub. It compiles and uploads, but it points users back here for the actual concepts.
-
+The public project keeps the active implementation in `src/path_recorder.cpp`, but the values are tuned for 2544X. Read this section before changing ports, drive ratio, replay interval, deadbands, or correction constants.

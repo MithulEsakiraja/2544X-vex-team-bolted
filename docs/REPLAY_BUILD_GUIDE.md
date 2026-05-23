@@ -118,6 +118,6 @@ The idea is simple: if a side was not intentionally moving, force that side to z
 
 ## Why The Public Source Uses A Stub
 
-The public `src/path_recorder.cpp` keeps this project buildable and shows where the replay system plugs into the robot code. The complete implementation is not included because a replay system copied without tuning is unreliable and does not show real engineering understanding.
+The public `src/path_recorder.cpp` keeps this project buildable and shows where the replay system plugs into the robot code. It is still not a universal template: a replay system copied without tuning is unreliable and does not show real engineering understanding.
 
 Use this guide to build your own version, test it, and explain the choices you made.
